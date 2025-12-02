@@ -1,0 +1,51 @@
+/* Reset-ish */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Background image */
+body {
+  min-height: 100vh;
+  background: url("Witterijst.png") center center / cover no-repeat fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9fafb;
+}
+
+/* Dark overlay to make text readable */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Center content */
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Restaurant title */
+.restaurant-name {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Tagline */
+.tagline {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: #e5e7eb;
+  max-width: 600px;
+  margin: 0 auto;
+}
