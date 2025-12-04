@@ -42,30 +42,7 @@ body {
   text-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* Navigation */
-.top-nav {
-  position: fixed;
-  top: 1.5rem;
-  right: 2rem;
-  z-index: 2;
-}
-
-.signin-link {
-  font-size: 1.1rem;
-  color: #f9fafb;
-  text-decoration: none;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  transition: 0.2s ease;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(6px);
-}
-
-.signin-link:hover {
-  background: rgba(255, 255, 255, 0.28);
-  transform: translateY(-2px);
-
-  /* Navigation bar */
+/* Navigation bar */
 .top-nav {
   position: fixed;
   top: 1.5rem;
@@ -76,32 +53,33 @@ body {
   gap: 1rem; /* space between the two buttons */
 }
 
-/* Base link styling */
+/* Base button style */
 .nav-link {
-  font-size: 1.05rem;
-  color: #f9fafb;
+  font-size: 1.15rem;                /* bigger text */
+  color: #e8f3ff;                    /* soft light blue text */
   text-decoration: none;
-  padding: 0.4rem 1rem;
+  padding: 0.55rem 1.35rem;          /* bigger pill shape */
   border-radius: 999px;
   transition: 0.2s ease;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(96, 165, 250, 0.35);  /* light blue tint */
   backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.25);
 }
 
 /* Hover effect */
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(96, 165, 250, 0.55); /* brighter blue */
   transform: translateY(-2px);
 }
 
-/* Highlight Create Account for visual priority */
+/* Highlighted Create Account */
 .nav-link.highlight {
-  background:rgba(255, 255, 255, 0.28); 
+  background: rgba(147, 197, 253, 0.7); /* brighter & lighter blue */
+  color: #ffffff;
   font-weight: 600;
 }
 
 /* Hover for highlighted button */
 .nav-link.highlight:hover {
-  background: rgba(255, 255, 255, 0.28);
-
+  background: rgba(147, 197, 253, 0.9);
 }
