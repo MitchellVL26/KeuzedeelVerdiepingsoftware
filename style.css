@@ -48,4 +48,30 @@ body {
   color: #e5e7eb;
   max-width: 600px;
   margin: 0 auto;
+
+  /* Navigation */
+.top-nav {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 2;
+}
+
+.signin-link {
+  font-size: 1.1rem;
+  color: #f9fafb;
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  transition: 0.2s ease;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+}
+
+/* Hover effect */
+.signin-link:hover {
+  background: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+}
+
 }
