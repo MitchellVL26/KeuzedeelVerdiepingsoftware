@@ -64,4 +64,45 @@ body {
 .signin-link:hover {
   background: rgba(255, 255, 255, 0.28);
   transform: translateY(-2px);
+
+  /* Navigation bar */
+.top-nav {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between the two buttons */
+}
+
+/* Base link styling */
+.nav-link {
+  font-size: 1.05rem;
+  color: #f9fafb;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  transition: 0.2s ease;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+/* Hover effect */
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-2px);
+}
+
+/* Highlight Create Account for visual priority */
+.nav-link.highlight {
+  background: rgba(249, 115, 22, 0.85); /* warm orange tone */
+  font-weight: 600;
+}
+
+/* Hover for highlighted button */
+.nav-link.highlight:hover {
+  background: rgba(249, 115, 22, 0.95);
+}
+
 }
