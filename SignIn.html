@@ -12,7 +12,6 @@
     <h1>Sign In</h1>
 
     <form class="signin-form" id="signinForm">
-      
       <label>
         Email
         <input type="email" id="email" required>
@@ -29,32 +28,7 @@
     </form>
   </main>
 
-  <script>
-    document.getElementById("signinForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // prevent page reload
-
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const message = document.getElementById("formMessage");
-
-      if (email === "" || password === "") {
-        message.textContent = "Vul alle velden in.";
-        message.style.color = "orange";
-        return;
-      }
-
-      // ✅ For now this just simulates a real login
-      message.textContent = "Succesvol ingelogd!";
-      message.style.color = "lightgreen";
-
-      console.log("Email:", email);
-      console.log("Password:", password);
-
-      // Optional redirect after login:
-      // window.location.href = "index.html";
-    });
-  </script>
-
+  <!-- ✅ make sure this script tag is here -->
+  <script src="script.js"></script>
 </body>
 </html>
-

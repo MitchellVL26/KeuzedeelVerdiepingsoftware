@@ -1,10 +1,35 @@
-// Wait until the HTML is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  const button = document.getElementById("clickMeBtn");
-  const message = document.getElementById("message");
+  // ===== SIGN IN PAGE LOGIC =====
+  const signinForm = document.getElementById("signinForm");
 
-  button.addEventListener("click", () => {
-    const now = new Date().toLocaleTimeString();
-    message.textContent = `Button clicked at ${now}!`;
-  });
+  if (signinForm) {
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const message = document.getElementById("formMessage");
+
+    signinForm.addEventListener("submit", (event) => {
+      event.preventDefault(); // stop page reload
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      if (!email || !password) {
+        message.textContent = "Vul alle velden in.";
+        message.style.color = "orange";
+        return;
+      }
+
+      // Simulated successful login
+      message.textContent = "Succesvol ingelogd!";
+      message.style.color = "lightgreen";
+
+      console.log("Email:", email);
+      console.log("Password:", password);
+
+       //Optional: redirect after successful sign in
+       //setTimeout(() => {
+         //window.location.href = "index.html";
+      // }, 800);
+    });
+  }
 });
