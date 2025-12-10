@@ -1,5 +1,17 @@
+// Wait until the HTML is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== SIGN IN PAGE LOGIC =====
+  // ===== HOME PAGE LOGIC (optional, for index.html) =====
+  const clickMeBtn = document.getElementById("clickMeBtn");
+  const messagePara = document.getElementById("message");
+
+  if (clickMeBtn && messagePara) {
+    clickMeBtn.addEventListener("click", () => {
+      const now = new Date().toLocaleTimeString();
+      messagePara.textContent = `Button clicked at ${now}!`;
+    });
+  }
+
+  // ===== SIGN IN PAGE LOGIC (for SignIn.html) =====
   const signinForm = document.getElementById("signinForm");
 
   if (signinForm) {
@@ -26,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Email:", email);
       console.log("Password:", password);
 
-       //Optional: redirect after successful sign in
-       //setTimeout(() => {
-         //window.location.href = "index.html";
-      // }, 800);
+      // ✅ Redirect after successful sign in
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 800);
     });
   }
 });
