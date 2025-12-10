@@ -23,7 +23,9 @@ body {
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 0;
+  pointer-events: none;   /* 👈 important: don’t block clicks */
 }
+
 
 /* Center content */
 .hero {
@@ -82,4 +84,25 @@ body {
 /* Hover for highlighted button */
 .nav-link.highlight:hover {
   background: rgba(147, 197, 253, 0.9);
+
+  .signin-body {
+  min-height: 100vh;
+  background: #0f172a;
+  color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin-container {
+  position: relative;
+  z-index: 1;              /* 👈 above overlay */
+  background: rgba(15, 23, 42, 0.9);
+  padding: 2.5rem 3rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
 }
