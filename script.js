@@ -1,14 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== HOME PAGE LOGIC =====
-  const clickMeBtn = document.getElementById("clickMeBtn");
-  const messagePara = document.getElementById("message");
 
-  if (clickMeBtn && messagePara) {
-    clickMeBtn.addEventListener("click", () => {
-      const now = new Date().toLocaleTimeString();
-      messagePara.textContent = `Button clicked at ${now}!`;
-    });
-  }
+  // Load saved accounts or create empty array
+  let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
 
   // ===== SIGN IN PAGE LOGIC =====
   const signinForm = document.getElementById("signinForm");
@@ -30,10 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      message.textContent = "Succesvol ingelogd!";
+      // Check if account exists
+      const user = accounts.find(acc =>
+        acc.email === email && acc.password === password
+      );
+
+      if (!user) {
+        message.textContent = "Email of wachtwoord is onjuist!";
+        message.style.color = "red";
+        return;
+      }
+
+      // Login success
+      message.textContent = `Welkom terug, ${user.name}!`;
       message.style.color = "lightgreen";
 
-      // Redirect to homepage
       setTimeout(() => {
         window.location.href = "index.html";
       }, 800);
@@ -62,16 +66,29 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Fake account creation success
+      // Check if email already exists
+      const existing = accounts.find(acc => acc.email === email);
+
+      if (existing) {
+        message.textContent = "Dit emailadres bestaat al!";
+        message.style.color = "red";
+        return;
+      }
+
+      // Create new account object
+      const newAccount = { name, email, password };
+
+      // Add to array
+      accounts.push(newAccount);
+
+      // Save to localStorage
+      localStorage.setItem("accounts", JSON.stringify(accounts));
+
       message.textContent = "Account succesvol aangemaakt!";
       message.style.color = "lightgreen";
 
-      console.log("New account:");
-      console.log("Name:", name);
-      console.log("Email:", email);
-      console.log("Password:", password);
+      console.log("Saved accounts:", accounts);
 
-      // Optional redirect to sign in page
       setTimeout(() => {
         window.location.href = "SignIn.html";
       }, 1000);
