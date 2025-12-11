@@ -11,24 +11,32 @@
   <main class="signin-container">
     <h1>Create Account</h1>
 
-    <form class="signin-form">
+    <form class="signin-form" id="createAccountForm">
+
       <label>
         Naam
-        <input type="text" required>
+        <input type="text" id="newName" required>
       </label>
 
       <label>
         Email
-        <input type="email" required>
+        <input type="email" id="newEmail" required>
       </label>
 
       <label>
         Wachtwoord
-        <input type="password" required>
+        <input type="password" id="newPassword" required>
       </label>
 
       <button type="submit">Create Account</button>
+
+      <p id="createMessage"></p>
+
     </form>
   </main>
+
+  <!-- Load shared JS -->
+  <script src="script.js"></script>
 </body>
 </html>
+

@@ -1,6 +1,5 @@
-// Wait until the HTML is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== HOME PAGE LOGIC (optional, for index.html) =====
+  // ===== HOME PAGE LOGIC =====
   const clickMeBtn = document.getElementById("clickMeBtn");
   const messagePara = document.getElementById("message");
 
@@ -11,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== SIGN IN PAGE LOGIC (for SignIn.html) =====
+  // ===== SIGN IN PAGE LOGIC =====
   const signinForm = document.getElementById("signinForm");
 
   if (signinForm) {
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const message = document.getElementById("formMessage");
 
     signinForm.addEventListener("submit", (event) => {
-      event.preventDefault(); // stop page reload
+      event.preventDefault();
 
       const email = emailInput.value.trim();
       const password = passwordInput.value.trim();
@@ -31,17 +30,51 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Simulated successful login
       message.textContent = "Succesvol ingelogd!";
       message.style.color = "lightgreen";
 
-      console.log("Email:", email);
-      console.log("Password:", password);
-
-      // ✅ Redirect after successful sign in
+      // Redirect to homepage
       setTimeout(() => {
         window.location.href = "index.html";
       }, 800);
+    });
+  }
+
+  // ===== CREATE ACCOUNT PAGE LOGIC =====
+  const createAccountForm = document.getElementById("createAccountForm");
+
+  if (createAccountForm) {
+    const nameInput = document.getElementById("newName");
+    const emailInput = document.getElementById("newEmail");
+    const passwordInput = document.getElementById("newPassword");
+    const message = document.getElementById("createMessage");
+
+    createAccountForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      if (!name || !email || !password) {
+        message.textContent = "Vul alle velden in.";
+        message.style.color = "orange";
+        return;
+      }
+
+      // Fake account creation success
+      message.textContent = "Account succesvol aangemaakt!";
+      message.style.color = "lightgreen";
+
+      console.log("New account:");
+      console.log("Name:", name);
+      console.log("Email:", email);
+      console.log("Password:", password);
+
+      // Optional redirect to sign in page
+      setTimeout(() => {
+        window.location.href = "SignIn.html";
+      }, 1000);
     });
   }
 });
