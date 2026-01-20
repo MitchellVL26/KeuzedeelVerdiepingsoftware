@@ -1,10 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  // Load saved accounts or create empty array
-  let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
-
-  // ===== SIGN IN PAGE LOGIC =====
-  const signinForm = document.getElementById("signinForm");
+ElementById("signinForm");
 
   if (signinForm) {
     const emailInput = document.getElementById("email");
@@ -18,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = passwordInput.value.trim();
 
       if (!email || !password) {
+        
         message.textContent = "Vul alle velden in.";
         message.style.color = "orange";
         return;
@@ -37,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Login success
       message.textContent = `Welkom terug, ${user.name}!`;
       message.style.color = "lightgreen";
+
+localStorage.setItem("loggedInUser", JSON.stringify(user));
 
       setTimeout(() => {
         window.location.href = "index.html";
@@ -84,6 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Save to localStorage
       localStorage.setItem("accounts", JSON.stringify(accounts));
 
+
+
       message.textContent = "Account succesvol aangemaakt!";
       message.style.color = "lightgreen";
 
@@ -93,5 +92,22 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "SignIn.html";
       }, 1000);
     });
+  }document.addEventListener("DOMContentLoaded", () => {
+
+  // Load saved accounts or create empty array
+  let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+
+  // ===== SIGN IN PAGE LOGIC =====
+  const signinForm = document.get
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const authNav = document.getElementById("authNav");
+
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  if (authNav && loggedInUser) {
+    authNav.style.display = "none";
   }
+});
+
 });
