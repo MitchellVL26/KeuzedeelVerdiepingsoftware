@@ -33,8 +33,6 @@ ElementById("signinForm");
       message.textContent = `Welkom terug, ${user.name}!`;
       message.style.color = "lightgreen";
 
-localStorage.setItem("loggedInUser", JSON.stringify(user));
-
       setTimeout(() => {
         window.location.href = "index.html";
       }, 800);
@@ -92,22 +90,4 @@ localStorage.setItem("loggedInUser", JSON.stringify(user));
         window.location.href = "SignIn.html";
       }, 1000);
     });
-  }document.addEventListener("DOMContentLoaded", () => {
-
-  // Load saved accounts or create empty array
-  let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
-
-  // ===== SIGN IN PAGE LOGIC =====
-  const signinForm = document.get
-
-  document.addEventListener("DOMContentLoaded", () => {
-  const authNav = document.getElementById("authNav");
-
-  const loggedInUser = localStorage.getItem("loggedInUser");
-
-  if (authNav && loggedInUser) {
-    authNav.style.display = "none";
   }
-});
-
-});
