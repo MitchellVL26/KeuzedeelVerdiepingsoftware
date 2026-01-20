@@ -1,4 +1,10 @@
-ElementById("signinForm");
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Load saved accounts or create empty array
+  let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+
+  // ===== SIGN IN PAGE LOGIC =====
+  const signinForm = document.getElementById("signinForm");
 
   if (signinForm) {
     const emailInput = document.getElementById("email");
@@ -12,7 +18,6 @@ ElementById("signinForm");
       const password = passwordInput.value.trim();
 
       if (!email || !password) {
-        
         message.textContent = "Vul alle velden in.";
         message.style.color = "orange";
         return;
@@ -79,8 +84,6 @@ ElementById("signinForm");
       // Save to localStorage
       localStorage.setItem("accounts", JSON.stringify(accounts));
 
-
-
       message.textContent = "Account succesvol aangemaakt!";
       message.style.color = "lightgreen";
 
@@ -91,3 +94,4 @@ ElementById("signinForm");
       }, 1000);
     });
   }
+});
