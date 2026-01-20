@@ -38,13 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
       message.textContent = `Welkom terug, ${user.name}!`;
       message.style.color = "lightgreen";
 
+// Login success
+message.textContent = `Welkom terug, ${user.name}!`;
+message.style.color = "lightgreen";
+
 // Save logged-in user
 localStorage.setItem("loggedInUser", JSON.stringify(user));
 
+setTimeout(() => {
+  window.location.href = "LoggedIn.html";
+}, 800);
 
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 800);
     });
   }
 
